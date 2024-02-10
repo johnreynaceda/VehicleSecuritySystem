@@ -17,7 +17,7 @@
 </head>
 
 <body class="font-sans antialiased relative">
-    <x-shared.background class="h-[90rem] absolute -right-80 -top-60 2xl:opacity-100 opacity-30" />
+    <x-shared.background class="h-[90rem] absolute -right-96 -top-60 2xl:opacity-100 opacity-30" />
     <section class="relative overflow-hidden bg-white/5">
         <div class="relative w-full mx-auto max-w-7xl">
             <div class="relative flex flex-col w-full p-5 mx-auto lg:px-16 md:flex-row md:items-center md:justify-between md:px-6"
@@ -66,7 +66,7 @@
                                 </p>
                             </div>
                             <div class="flex flex-col items-center gap-3 mt-10 lg:flex-row">
-                                <a class="inline-flex items-center justify-center w-full px-6 py-4 text-center text-green-600 duration-200   border-2 border-green-600 focus:outline-none hover:bg-transparent hover:bg-green-600 hover:text-white lg:w-auto rounded-xl"
+                                <a class="inline-flex items-center justify-center w-full px-6 py-4 text-center text-green-600 duration-200   border-2 border-green-600 focus:outline-none hover:bg-transparent hover:bg-green-500 hover:text-white lg:w-auto rounded-xl"
                                     href="{{ route('login') }}">
                                     <svg class="w-7 h-7" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
                                         fill="currentColor" aria-hidden="true">

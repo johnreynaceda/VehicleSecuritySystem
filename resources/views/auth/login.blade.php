@@ -45,4 +45,10 @@
             </x-primary-button>
         </div>
     </form>
+
+    <div class="mt-5 text-center text-sm">
+        <span>Don't Have an account? <a href="{{ route('register') }}"
+                class="hover:text-green-700 hover:font-semibold text-gray-600">Sign Up
+                here</a></span>
+    </div>
 </x-guest-layout>
