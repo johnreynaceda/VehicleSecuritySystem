@@ -4,7 +4,7 @@
             <h1 class="font-bold 2xl:text-4xl text-2xl text-green-600 opacity-50">SULTAN KUDARAT STATE UNIVERSITY
             </h1>
         </div>
-        <x-shared.background class="h-[90rem] absolute -right-96 -top-60 2xl:opacity-100 opacity-30" />
+        <x-shared.background class="h-[90rem] fixed -right-96 -top-60 2xl:opacity-100 opacity-30" />
 
 
         <div class="w-full sm:max-w-3xl mt-6 px-6 py-5 relative bg-white shadow-2xl overflow-hidden sm:rounded-lg">

@@ -18,7 +18,7 @@ class AppServiceProvider extends ServiceProvider
             'danger' => Color::Red,
             'gray' => Color::Zinc,
             'info' => Color::Blue,
-            'primary' => Color::Green,
+            'primary' => Color::hex('#3DB369'),
             'success' => Color::Green,
             'warning' => Color::Amber,
 
@@ -30,6 +30,14 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+        FilamentColor::register([
+            'danger' => Color::Red,
+            'gray' => Color::Zinc,
+            'info' => Color::Blue,
+            'primary' => Color::hex('#3DB369'),
+            'success' => Color::Green,
+            'warning' => Color::Amber,
+
+        ]);
     }
 }

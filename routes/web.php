@@ -19,8 +19,21 @@ Route::get('/', function () {
 });
 
 Route::get('/dashboard', function () {
-    return view('dashboard');
+    // return view('dashboard');
+    if (auth()->user()->user_type == 'staff') {
+        dd('staff');
+    }else{
+        return redirect()->route('user.dashboard');
+    }
 })->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::prefix('user')->group(
+    function(){
+        Route::get('/dashboard', function(){
+            return view('user.index');
+        })->name('user.dashboard');
+    }
+);
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

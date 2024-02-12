@@ -21,6 +21,9 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'user_type',
+        'contact',
+        'identification',
     ];
 
     /**
@@ -42,4 +45,8 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    public function vehicleInformation(){
+        return $this->hasOne(VehicleInformation::class);
+    }
 }

@@ -23,11 +23,11 @@
     @vite('resources/css/app.css')
 </head>
 
-<body class="font-sans text-gray-900 antialiased relative overflow-hidden">
+<body class="font-sans text-gray-900 antialiased relative ">
 
     @if (request()->routeIs('login'))
         <div class="min-h-screen relative flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-white">
-            <div class="absolute bottom-5 left-5">
+            <div class=" bottom-5 left-5">
                 <h1 class="font-bold 2xl:text-4xl text-2xl text-green-600 opacity-50">SULTAN KUDARAT STATE UNIVERSITY
                 </h1>
             </div>
