@@ -27,11 +27,11 @@
 
     @if (request()->routeIs('login'))
         <div class="min-h-screen relative flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-white">
-            <div class=" bottom-5 left-5">
-                <h1 class="font-bold 2xl:text-4xl text-2xl text-green-600 opacity-50">SULTAN KUDARAT STATE UNIVERSITY
+            <div class=" fixed bottom-5 left-5">
+                <h1 class="font-bold 2xl:text-4xl text-2xl text-green-700 opacity-50">SULTAN KUDARAT STATE UNIVERSITY
                 </h1>
             </div>
-            <x-shared.background class="h-[90rem] absolute -right-96 -top-60 2xl:opacity-100 opacity-30" />
+            <x-shared.background class="h-[90rem] fixed -right-96 -top-60 2xl:opacity-100 opacity-30" />
             <div class="relative">
                 <a href="/">
                     <x-application-logo class="w-20 h-20 fill-current text-gray-500" />

@@ -19,14 +19,42 @@ Route::get('/', function () {
 });
 
 Route::get('/dashboard', function () {
-    // return view('dashboard');
-    if (auth()->user()->user_type == 'staff') {
-        dd('staff');
-    }else{
-        return redirect()->route('user.dashboard');
-    }
+
+    // if (auth()->user()->user_type == 'staff') {
+    //     dd('staff');
+    // }else{
+    //     return redirect()->route('user.dashboard');
+    // }
+        if (auth()->user()->user_type == 'admin') {
+          return redirect()->route('admin.dashboard');
+        }elseif (auth()->user()->user_type == 'guard') {
+            return redirect()->route('guard.dashboard');
+        }else{
+            return redirect()->route('user.dashboard');
+        }
+
 })->middleware(['auth', 'verified'])->name('dashboard');
 
+
+//admin routes
+Route::prefix('admin')->group(
+    function(){
+        Route::get('/dashboard', function(){
+            return view('admin.index');
+        })->name('admin.dashboard');
+    }
+);
+
+//guard routes
+Route::prefix('guard')->group(
+    function(){
+        Route::get('/dashboard', function(){
+            return view('guard.index');
+        })->name('guard.dashboard');
+    }
+);
+
+//user route
 Route::prefix('user')->group(
     function(){
         Route::get('/dashboard', function(){

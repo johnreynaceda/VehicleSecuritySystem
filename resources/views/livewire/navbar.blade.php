@@ -22,29 +22,48 @@
                 </button>
             </div>
             <nav :class="{ 'flex': open, 'hidden': !open }"
-                class="flex-col items-center flex-grow hidden md:pb-0 md:flex md:justify-end md:flex-row">
-                <a class="px-2 py-2 text-sm text-gray-500 lg:px-6 md:px-3 hover:text-blue-600 lg:ml-auto"
-                    href="#">
-                    About
-                </a>
-                <a class="px-2 py-2 text-sm text-gray-500 lg:px-6 md:px-3 hover:text-blue-600" href="#">
-                    Contact
-                </a>
-                <a class="px-2 py-2 text-sm text-gray-500 lg:px-6 md:px-3 hover:text-blue-600" href="#">
-                    Documentation
-                </a>
+                class="flex-col  items-center flex-grow hidden 2xl:pl-20 md:pb-0 md:flex md:justify-end md:flex-row">
+
+                @if (auth()->user()->user_type == 'admin')
+                    <div>
+                        <a class=" {{ request()->routeIs('admin.dashboard') ? 'text-green-600 font-bold' : '' }} px-2 py-2 text-sm text-gray-500 lg:px-6 md:px-3 hover:text-green-600"
+                            href="#">
+                            Dashboard
+                        </a>
+                        <a class="px-2 py-2 text-sm text-gray-500 lg:px-6 md:px-3 hover:text-green-600" href="#">
+                            Attendance
+                        </a>
+                        <a class="px-2 py-2 text-sm text-gray-500 lg:px-6 md:px-3 hover:text-green-600" href="#">
+                            Users
+                        </a>
+                        <a class="px-2 py-2 text-sm text-gray-500 lg:px-6 md:px-3 hover:text-green-600" href="#">
+                            Reports
+                        </a>
+                    </div>
+                @elseif(auth()->user()->user_type == 'guard')
+                    <div>
+                        <a class=" {{ request()->routeIs('guard.dashboard') ? 'text-green-600 font-bold' : '' }} px-2 py-2 text-sm text-gray-500 lg:px-6 md:px-3 hover:text-green-600"
+                            href="#">
+                            Home
+                        </a>
+                        <a class=" {{ request()->routeIs('admin.dashboard') ? 'text-green-600 font-bold' : '' }} px-2 py-2 text-sm text-gray-500 lg:px-6 md:px-3 hover:text-green-600"
+                            href="#">
+                            Attendance
+                        </a>
+                    </div>
+                @endif
+
 
                 <div class="inline-flex items-center gap-2 list-none lg:ml-auto">
                     <div class="relative flex-shrink-0 ml-5" @click.away="open = false" x-data="{ open: false }">
                         <div>
                             <button @click="open = !open" type="button"
-                                class="flex bg-white rounded-full focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                                class="flex bg-white rounded-full focus:outline-none ring-1 ring-green-500 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
                                 id="user-menu-button" aria-expanded="false" aria-haspopup="true">
                                 <span class="sr-only">
                                     Open user menu
                                 </span>
-                                <img class="object-cover w-8 h-8 rounded-full"
-                                    src="https://images.unsplash.com/flagged/photo-1570612861542-284f4c12e75f?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=2070&amp;q=80"
+                                <img class="object-cover w-12 h-12 rounded-full" src="{{ asset('images/sample.png') }}"
                                     alt="">
                             </button>
                         </div>

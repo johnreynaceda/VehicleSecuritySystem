@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('vehicle_information', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id');
+            $table->foreignId('user_id')->nullable();
             $table->string('model');
             $table->string('plate_number');
             $table->string('front_view_path')->nullable();

@@ -121,6 +121,9 @@ class RegisterUser extends Component implements HasForms
         }
 
         auth()->loginUsingId($user->id);
+
         sleep(2);
+
+        return redirect()->route('dashboard');
     }
 }

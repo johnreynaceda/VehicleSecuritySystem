@@ -66,7 +66,7 @@
                                 </p>
                             </div>
                             <div class="flex flex-col items-center gap-3 mt-10 lg:flex-row">
-                                <a class="inline-flex items-center justify-center w-full px-6 py-4 text-center text-green-600 duration-200   border-2 border-green-600 focus:outline-none hover:bg-transparent hover:bg-green-500 hover:text-white lg:w-auto rounded-xl"
+                                <a class="inline-flex items-center justify-center w-full px-6 py-4 text-center text-green-600 duration-200   border-2 border-green-600 focus:outline-none hover:bg-transparent hover:bg-green-500  lg:w-auto rounded-xl"
                                     href="{{ route('login') }}">
                                     <svg class="w-7 h-7" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
                                         fill="currentColor" aria-hidden="true">
