@@ -16,8 +16,9 @@ return new class extends Migration
             $table->string('identification')->nullable();
             $table->string('fullname')->nullable();
             $table->string('user_type')->nullable();
-            $table->dateTime('time-in')->nullable();
-            $table->dateTime('time-out')->nullable();
+            $table->dateTime('time_in')->nullable();
+            $table->dateTime('time_out')->nullable();
+            $table->string('status')->default('on-progress');
             $table->timestamps();
         });
     }

@@ -33,5 +33,13 @@
         <h1 class="text-sm text-gray-500 uppercase font-semibold">Plate Number</h1>
         <h1 class="">{{ $this->plate_number }}</h1>
     </div>
+    <div>
+        <h1 class="text-sm text-gray-500 uppercase font-semibold">ORCR</h1>
+        <h1 class="">{{ $this->orcr }}</h1>
+    </div>
+    <div>
+        <h1 class="text-sm text-gray-500 uppercase font-semibold">License Number</h1>
+        <h1 class="">{{ $this->license }}</h1>
+    </div>
 
 </div>

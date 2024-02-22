@@ -34,6 +34,7 @@
             {{ $slot }}
         </div>
     </main>
+    <x-dialog z-index="z-50" blur="md" align="center" />
     @filamentScripts
     @vite('resources/js/app.js')
 </body>

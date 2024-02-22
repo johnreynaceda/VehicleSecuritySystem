@@ -42,6 +42,12 @@ Route::prefix('admin')->group(
         Route::get('/dashboard', function(){
             return view('admin.index');
         })->name('admin.dashboard');
+        Route::get('/attendance', function(){
+            return view('admin.attendance');
+        })->name('admin.attendance');
+        Route::get('/users', function(){
+            return view('admin.users');
+        })->name('admin.users');
     }
 );
 

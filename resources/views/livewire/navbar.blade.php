@@ -27,13 +27,15 @@
                 @if (auth()->user()->user_type == 'admin')
                     <div>
                         <a class=" {{ request()->routeIs('admin.dashboard') ? 'text-green-600 font-bold' : '' }} px-2 py-2 text-sm text-gray-500 lg:px-6 md:px-3 hover:text-green-600"
-                            href="#">
+                            href="{{ route('admin.dashboard') }}">
                             Dashboard
                         </a>
-                        <a class="px-2 py-2 text-sm text-gray-500 lg:px-6 md:px-3 hover:text-green-600" href="#">
+                        <a class="{{ request()->routeIs('admin.attendance') ? 'text-green-600 font-bold' : '' }} px-2 py-2 text-sm text-gray-500 lg:px-6 md:px-3 hover:text-green-600"
+                            href="{{ route('admin.attendance') }}">
                             Attendance
                         </a>
-                        <a class="px-2 py-2 text-sm text-gray-500 lg:px-6 md:px-3 hover:text-green-600" href="#">
+                        <a class="{{ request()->routeIs('admin.users') ? 'text-green-600 font-bold' : '' }} px-2 py-2 text-sm text-gray-500 lg:px-6 md:px-3 hover:text-green-600"
+                            href="{{ route('admin.users') }}">
                             Users
                         </a>
                         <a class="px-2 py-2 text-sm text-gray-500 lg:px-6 md:px-3 hover:text-green-600" href="#">
@@ -82,18 +84,15 @@
                                 Your Profile
                             </a>
 
-                            <a href="#" class="block px-4 py-2 text-sm text-gray-500" role="menuitem"
-                                tabindex="-1" id="user-menu-item-1">
-                                Settings
-                            </a>
+
 
                             <form method="POST" action="{{ route('logout') }}">
                                 @csrf
                                 <a href="route('logout')"
                                     onclick="event.preventDefault();
                                             this.closest('form').submit();"
-                                    class="block px-4 py-2 text-sm text-gray-500" role="menuitem" tabindex="-1"
-                                    id="user-menu-item-2">
+                                    class="block px-4 py-2 text-sm hover:text-red-600 hover:font-medium text-gray-500"
+                                    role="menuitem" tabindex="-1" id="user-menu-item-2">
                                     Sign out
                                 </a>
                             </form>

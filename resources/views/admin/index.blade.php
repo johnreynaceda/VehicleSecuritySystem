@@ -1,6 +1,6 @@
 @section('title', 'Dashboard')
 <x-admin-layout>
     <div>
-        sdsdsdsd
+        <livewire:guard.transaction />
     </div>
 </x-admin-layout>

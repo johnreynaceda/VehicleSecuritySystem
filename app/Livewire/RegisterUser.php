@@ -26,7 +26,7 @@ class RegisterUser extends Component implements HasForms
 
     public $user_type, $identification, $firstname, $middlename, $lastname, $email, $password, $confirm_password, $contact;
 
-    public $front_view = [], $back_view = [], $side_view = [], $model, $plate_number;
+    public $front_view = [], $back_view = [], $side_view = [], $model, $plate_number, $orcr, $license;
     public function render()
     {
         return view('livewire.register-user');
@@ -66,6 +66,8 @@ class RegisterUser extends Component implements HasForms
                             Fieldset::make('INFORMATION')->schema([
                                 TextInput::make('model')->label('Vehicle Model')->required(),
                                 TextInput::make('plate_number')->label('Plate Number')->required(),
+                                TextInput::make('orcr')->label('ORCR')->required(),
+                                TextInput::make('license')->label('License Number')->required(),
                             ]),
                         ]),
                     Wizard\Step::make('Summary')
@@ -100,6 +102,8 @@ class RegisterUser extends Component implements HasForms
         $vehicle = VehicleInformation::create([
             'user_id' => $user->id,
             'model' => $this->model,
+            'orcr' => $this->orcr,
+            'license' => $this->license,
             'plate_number' => $this->plate_number,
         ]);
 

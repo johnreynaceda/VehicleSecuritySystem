@@ -32,8 +32,18 @@
                 <h1 class="uppercase text-lg text-gray-700 font-bold">
                     {{ auth()->user()->vehicleInformation->plate_number }}</h1>
             </div>
+            <div>
+                <h1 class="text-sm">ORCR</h1>
+                <h1 class="uppercase text-lg text-gray-700 font-bold">
+                    {{ auth()->user()->vehicleInformation->orcr }}</h1>
+            </div>
+            <div>
+                <h1 class="text-sm">License Number</h1>
+                <h1 class="uppercase text-lg text-gray-700 font-bold">
+                    {{ auth()->user()->vehicleInformation->license }}</h1>
+            </div>
         </div>
-        <div class="mt-4 grid 2xl:grid-cols-3 2xl:gap-5 gap-2 grid-cols-1">
+        <div class="mt-10 grid 2xl:grid-cols-3 2xl:gap-5 gap-2 grid-cols-1">
             <div class="border border-gray-600 relative h-40 overflow-hidden rounded-xl border-dashed p-4">
                 <img src="{{ Storage::url(auth()->user()->vehicleInformation->front_view_path) }}"
                     class="h-full w-full absolute left-0 top-0 object-cover" alt="">
