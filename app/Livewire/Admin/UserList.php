@@ -7,6 +7,7 @@ use App\Models\Shop\Product;
 use App\Models\User;
 use Filament\Forms\Concerns\InteractsWithForms;
 use Filament\Forms\Contracts\HasForms;
+use Filament\Tables\Actions\DeleteAction;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Concerns\InteractsWithTable;
 use Filament\Tables\Contracts\HasTable;
@@ -36,7 +37,7 @@ class UserList extends Component implements HasForms, HasTable
                 // ...
             ])
             ->actions([
-                // ...
+                DeleteAction::make('delete'),
             ])
             ->bulkActions([
                 // ...

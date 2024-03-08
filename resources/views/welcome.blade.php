@@ -99,8 +99,8 @@
         </div>
     </section>
     <section class="relative overflow-hidden bg-white">
-        <div class="relative w-full mx-auto py-12 max-w-7xl">
-            Other infos...
+        <div class="relative w-full mx-auto py-14 max-w-7xl">
+            {{-- Other infos... --}}
         </div>
     </section>
 

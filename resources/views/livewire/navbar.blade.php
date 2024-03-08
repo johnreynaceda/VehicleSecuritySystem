@@ -1,7 +1,7 @@
 <div>
     <div class="w-full mx-auto  2xl:max-w-7xl">
         <div x-data="{ open: false }"
-            class="relative flex flex-col w-full p-5 mx-auto bg-white md:items-center md:justify-between md:flex-row md:px-6 lg:px-8">
+            class="relative flex flex-col w-full p-5 mx-auto bg-white  md:items-center md:justify-between md:flex-row md:px-6 lg:px-8">
             <div class="flex flex-row items-center justify-between lg:justify-start">
                 <a class="text-lg tracking-tight text-black uppercase focus:outline-none focus:ring lg:text-2xl"
                     href="/">
@@ -38,9 +38,9 @@
                             href="{{ route('admin.users') }}">
                             Users
                         </a>
-                        <a class="px-2 py-2 text-sm text-gray-500 lg:px-6 md:px-3 hover:text-green-600" href="#">
+                        {{-- <a class="px-2 py-2 text-sm text-gray-500 lg:px-6 md:px-3 hover:text-green-600" href="#">
                             Reports
-                        </a>
+                        </a> --}}
                     </div>
                 @elseif(auth()->user()->user_type == 'guard')
                     <div>

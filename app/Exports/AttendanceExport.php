@@ -9,6 +9,12 @@ use Maatwebsite\Excel\Concerns\FromView;
 
 class AttendanceExport implements FromView
 {
+    protected $user_type;
+
+    public function __construct($user_type)
+    {
+        $this->user_type = $user_type;
+    }
     /**
     * @return \Illuminate\Support\Collection
     */
@@ -20,7 +26,7 @@ class AttendanceExport implements FromView
     public function view(): View
     {
         return view('exports.attendance', [
-            'attendances' => Attendance::all()
+            'attendances' => Attendance::where('user_type', $this->user_type)->get(),
         ]);
     }
 }

@@ -20,7 +20,7 @@
     </div>
     <div class="mt-5 mx-4 2xl:mx-0">
         <header class="font-bold text-xl text-green-600">VEHICLE INFORMATION</header>
-        <x-button label="Edit Records" class="mt-2" sm slate icon="pencil-alt" />
+        <livewire:user.edit-detail />
         <div class="mt-4 grid grid-cols-2 gap-5">
             <div>
                 <h1 class="text-sm">Model</h1>
@@ -43,28 +43,10 @@
                     {{ auth()->user()->vehicleInformation->license }}</h1>
             </div>
         </div>
-        <div class="mt-10 grid 2xl:grid-cols-3 2xl:gap-5 gap-2 grid-cols-1">
-            <div class="border border-gray-600 relative h-40 overflow-hidden rounded-xl border-dashed p-4">
-                <img src="{{ Storage::url(auth()->user()->vehicleInformation->front_view_path) }}"
-                    class="h-full w-full absolute left-0 top-0 object-cover" alt="">
-                <div class="absolute bottom-0 left-0 bg-white px-3 py-2 bg-opacity-80 w-full">
-                    <span class="font-bold text-gray-700 uppercase">Front View</span>
-                </div>
-            </div>
-            <div class="border border-gray-600 relative h-40 overflow-hidden rounded-xl border-dashed p-4">
-                <img src="{{ Storage::url(auth()->user()->vehicleInformation->back_view_path) }}"
-                    class="h-full w-full absolute left-0 top-0 object-cover" alt="">
-                <div class="absolute bottom-0 left-0 bg-white px-3 py-2 bg-opacity-80 w-full">
-                    <span class="font-bold text-gray-700 uppercase">Back View</span>
-                </div>
-            </div>
-            <div class="border border-gray-600 relative h-40 overflow-hidden rounded-xl border-dashed p-4">
-                <img src="{{ Storage::url(auth()->user()->vehicleInformation->side_view_path) }}"
-                    class="h-full w-full absolute left-0 top-0 object-cover" alt="">
-                <div class="absolute bottom-0 left-0 bg-white px-3 py-2 bg-opacity-80 w-full">
-                    <span class="font-bold text-gray-700 uppercase">Side View</span>
-                </div>
-            </div>
+
+        <div class="w-full">
+            <livewire:user.vehicle-update />
         </div>
+
     </div>
 </x-user-layout>
