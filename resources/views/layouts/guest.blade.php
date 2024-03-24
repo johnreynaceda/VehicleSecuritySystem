@@ -39,9 +39,9 @@
             </div>
 
             <div class="w-full sm:max-w-md mt-6 px-6 py-5 relative bg-white shadow-2xl overflow-hidden sm:rounded-lg">
-                <h1 class="text-green-600 text-3xl text-center w-full font-protest font-bold">VEHICLE</h1>
+                <h1 class="text-green-600 text-3xl text-center w-full font-protest font-bold">JRJ</h1>
                 <p class="text-xl font-medium  text-center text-slate-500">
-                    Security
+                    Vehicle
                     Management System
                 </p>
                 <div class="mt-10">

@@ -18,7 +18,9 @@ return new class extends Migration
             $table->string('model');
             $table->string('plate_number');
             $table->string('orcr')->nullable();
+            $table->string('proof_of_orcr')->nullable();
             $table->string('license')->nullable();
+            $table->string('proof_of_license')->nullable();
             $table->string('front_view_path')->nullable();
             $table->string('back_view_path')->nullable();
             $table->string('side_view_path')->nullable();

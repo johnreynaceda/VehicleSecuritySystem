@@ -7,7 +7,7 @@
                     href="/">
                     <div class="flex items-center space-x-2">
                         <img src="{{ asset('images/sksu_logo.png') }}" class="h-14 w-14" alt="">
-                        <h1 class="font-bold text-4xl text-green-600 font-protest">VSMS</h1>
+                        <h1 class="font-bold text-4xl text-green-600 font-protest">JRJ:VMS</h1>
                     </div>
                 </a>
                 <button @click="open = !open"

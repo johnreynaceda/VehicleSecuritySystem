@@ -57,11 +57,11 @@
                         <div class="max-w-xl text-center lg:text-left">
                             <div>
                                 <p class="text-3xl font-medium md:text-6xl text-slate-500">
-                                    <span class="text-green-600 font-protest font-bold">VEHICLE</span> Security
-                                    Management System
+                                    <span class="text-green-600 font-protest font-bold">JRJ</span> Vehicle Management
+                                    System
                                 </p>
                                 <p class="mt-4 text-lg tracking-tight text-slate-500 lg:text-xl">
-                                    A vehicle security system is a comprehensive solution designed to safeguard
+                                    A vehicle management system is a comprehensive solution designed to safeguard
                                     automobiles from theft and unauthorized access.
                                 </p>
                             </div>

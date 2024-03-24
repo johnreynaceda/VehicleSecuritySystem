@@ -26,7 +26,7 @@ class RegisterUser extends Component implements HasForms
 
     public $user_type, $identification, $firstname, $middlename, $lastname, $email, $password, $confirm_password, $contact;
 
-    public $front_view = [], $back_view = [], $side_view = [], $model, $plate_number, $orcr, $license;
+    public $front_view = [], $back_view = [], $side_view = [], $model, $plate_number, $orcr, $license, $proof_orcr = [], $proof_license = [];
     public function render()
     {
         return view('livewire.register-user');
@@ -68,6 +68,8 @@ class RegisterUser extends Component implements HasForms
                                 TextInput::make('plate_number')->label('Plate Number')->required(),
                                 TextInput::make('orcr')->label('ORCR')->required(),
                                 TextInput::make('license')->label('License Number')->required(),
+                                FileUpload::make('proof_orcr')->label('Proof of ORCR'),
+                                FileUpload::make('proof_license')->label('Proof of License'),
                             ]),
                         ]),
                     Wizard\Step::make('Summary')
@@ -121,6 +123,17 @@ class RegisterUser extends Component implements HasForms
         foreach ($this->side_view as $key => $value) {
             $vehicle->update([
                 'side_view_path' => $value->store('Side View', 'public'),
+            ]);
+        }
+
+        foreach ($this->proof_orcr as $key => $value) {
+            $vehicle->update([
+                'proof_of_orcr' => $value->store('ORCR', 'public'),
+            ]);
+        }
+        foreach ($this->proof_license as $key => $value) {
+            $vehicle->update([
+                'proof_of_license' => $value->store('License', 'public'),
             ]);
         }
 
