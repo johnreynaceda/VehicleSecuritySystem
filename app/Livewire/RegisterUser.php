@@ -68,8 +68,8 @@ class RegisterUser extends Component implements HasForms
                                 TextInput::make('plate_number')->label('Plate Number')->required(),
                                 TextInput::make('orcr')->label('ORCR')->required(),
                                 TextInput::make('license')->label('License Number')->required(),
-                                FileUpload::make('proof_orcr')->label('Proof of ORCR'),
-                                FileUpload::make('proof_license')->label('Proof of License'),
+                                FileUpload::make('proof_orcr')->label('Proof of ORCR')->required(),
+                                FileUpload::make('proof_license')->label('Proof of License')->required(),
                             ]),
                         ]),
                     Wizard\Step::make('Summary')
