@@ -38,9 +38,10 @@
                             href="{{ route('admin.users') }}">
                             Users
                         </a>
-                        {{-- <a class="px-2 py-2 text-sm text-gray-500 lg:px-6 md:px-3 hover:text-green-600" href="#">
-                            Reports
-                        </a> --}}
+                        <a class="{{ request()->routeIs('admin.slots') ? 'text-green-600 font-bold' : '' }} px-2 py-2 text-sm text-gray-500 lg:px-6 md:px-3 hover:text-green-600"
+                            href="{{ route('admin.slots') }}">
+                            Slots
+                        </a>
                     </div>
                 @elseif(auth()->user()->user_type == 'guard')
                     <div>
@@ -52,6 +53,9 @@
                             href="#">
                             Attendance
                         </a>
+                        {{-- <a class="px-2 py-2 text-sm text-gray-500 lg:px-6 md:px-3 hover:text-green-600" href="#">
+                            Slots
+                        </a> --}}
                     </div>
                 @endif
 

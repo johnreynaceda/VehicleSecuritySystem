@@ -1,4 +1,12 @@
 <div>
+    <div class="absolute top-10 -right-10">
+        <div class="border-2 bg-white border-green-600 shadow-xl w-64 p-5 rounded-xl">
+            <h1 class="font-bold text-gray-700">Remaining Slots</h1>
+            <div class="mt-5 text-center text-4xl font-bold text-green-700">
+                {{ $slots }}
+            </div>
+        </div>
+    </div>
     <div class="mt-10">
         <x-button label="Visitor Add" wire:click="$set('visitor_modal', true)" right-icon="user" positive
             class="font-semibold uppercase" rounded md />

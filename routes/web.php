@@ -48,6 +48,9 @@ Route::prefix('admin')->group(
         Route::get('/users', function(){
             return view('admin.users');
         })->name('admin.users');
+        Route::get('/slots', function(){
+            return view('admin.slots');
+        })->name('admin.slots');
     }
 );
 

@@ -3,6 +3,7 @@
 namespace App\Livewire\Guard;
 
 use App\Models\Attendance;
+use App\Models\Slot;
 use App\Models\User;
 use App\Models\VehicleInformation;
 use App\Models\VisitorInformation;
@@ -26,6 +27,10 @@ class Transaction extends Component
                     'time_out' => now(),
                     'status' => 'done',
                 ]);
+                $slot = Slot::first();
+                $slot->update([
+                    'total_slots' => $slot->total_slots + 1,
+                ]);
                 $this->dialog()->success(
                     $title = 'OUT',
                     $description = 'vehicle OUT successfully'
@@ -37,6 +42,10 @@ class Transaction extends Component
                 'fullname' => $data->first()->name,
                 'user_type' => $data->first()->user_type,
                 'time_in' => now(),
+               ]);
+               $slot = Slot::first();
+               $slot->update([
+                   'total_slots' => $slot->total_slots - 1,
                ]);
                $this->dialog()->success(
                 $title = 'IN',
@@ -81,6 +90,10 @@ class Transaction extends Component
         'user_type' => 'visitor',
         'time_in' => now(),
       ]);
+      $slot = Slot::first();
+      $slot->update([
+          'total_slots' => $slot->total_slots - 1,
+      ]);
 
       $this->dialog()->success(
         $title = 'IN',
@@ -92,6 +105,8 @@ class Transaction extends Component
     }
     public function render()
     {
-        return view('livewire.guard.transaction');
+        return view('livewire.guard.transaction', [
+            'slots' => Slot::get()->count() > 0 ? Slot::first()->total_slots : 0,
+        ]);
     }
 }

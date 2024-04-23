@@ -5,6 +5,7 @@ namespace App\Livewire\Admin;
 use App\Exports\AttendanceExport;
 use App\Models\Attendance;
 use App\Models\Shop\Product;
+use App\Models\Slot;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Concerns\InteractsWithForms;
 use Filament\Forms\Contracts\HasForms;
@@ -69,6 +70,10 @@ class AttendanceList extends Component
         $data->update([
             'time_out' => now(),
           'status' => 'done',
+        ]);
+        $slot = Slot::first();
+        $slot->update([
+            'total_slots' => $slot->total_slots + 1,
         ]);
     }
 
